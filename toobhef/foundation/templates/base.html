@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOOBHEF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+</head>
+
+<body>
+
+    <section class="body">
+        {% include 'navbar.html' %}
+    </section>
+
+
+    {% block content %}
+    {% endblock %}
+
+
+    <footer>
+        <div class="footer-title">
+            <div>
+                <a href="">
+                    <h3>TOOBHEF</h3>
+                </a>
+            </div>
+            <div class="socials">
+                <a href="https://web.facebook.com/profile.php?id=100086625846353" target="_blank"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+        </div>
+        <div class="content">
+            <div class="about-foot">
+                <h4>About Us</h4>
+                <p>We are dedicated to promoting healthier and more educated lives for all, breaking barriers, and
+                    fostering positive change within communities.</p>
+
+                <div class="">
+
+                </div>
+                <div class="">
+                    <h5 class="news">Sign Up For Our News Letter</h5>
+                </div>
+                <div class="email">
+                    <input type="Email" placeholder="Email Address">
+                    <button>Submit</button>
+                </div>
+            </div>
+            <div class="contact">
+                <h4>Contact</h4>
+                <div class="sub-cont">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="loc">
+                        <p>Address</p>
+                        <p><strong>15 Edinburgh Rd, Enugu </strong></p>
+                    </div>
+
+                </div>
+                <div class="sub-cont">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="loc">
+                        <p>Phone Number</p>
+                        <p><strong>090101010110 </strong></p>
+                    </div>
+
+                </div>
+                <div class="sub-cont">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="loc">
+                        <p>Email</p>
+                        <p><strong>toobhef@gmail.com</strong></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="events">
+                <h4>Recent Events</h4>
+
+                <div class="event">
+                    <div class="img">
+                        <img src="{% static 'images2/events.webp' %}" alt="">
+                    </div>
+                    <div class="">
+                        <strong>Medical Outreach Ezeagu</strong>
+                        <p><i class="fa-regular fa-calendar-days"></i> April 3, 2023</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="img">
+                        <img src="{% static 'images2/events2.webp' %}" alt="">
+                    </div>
+                    <div class="">
+                        <strong>Medical Outreach Ezeagu</strong>
+                        <p><i class="fa-regular fa-calendar-days"></i> April 3, 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <div class="top"><a href="#" id="backToTop"><i class="fa-solid fa-arrow-up"></i></a></div>
+    </footer>
+
+
+
+
+    <script src="{% static 'script.js' %}">
+
+    </script>
+
+</body>
+
+</html>

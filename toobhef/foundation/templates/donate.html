@@ -1,0 +1,241 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOOBHEF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+    <section class="body donate-body">
+        <header>
+            {% include 'navbar.html' %}
+        </header>
+
+        <div class="hero-txt">
+            <h1>Fuel positive change. Donate now!</h1>
+            <p>Empower change with your generosity. Support TOOBHEF's mission. Your donation fuels healthcare and
+                education initiatives, creating lasting impact in the community.</p>
+
+    </section>
+
+    <section class="donates">
+        <div class="title">
+            <p>Donate</p>
+            <h3 class="title-2">Support Our Cause</h3>
+        </div>
+
+        <p>Your contribution makes a meaningful impact on the lives of those we serve. To donate, please make a bank
+            transfer to our official account. Your generosity helps us continue our mission of providing healthcare and
+            education to the community.</p>
+
+        <h4>Bank Transfer Information:</h>
+            <p>Bank: Guaranty Trust Bank.</p>
+            <p>Account Name:  TOOBHE Foundation</p>
+            <p>Account Number: 0179194330</p>
+            <p>Reference: [Your Name or Donation Code]</p>
+
+            <p class="terms"><strong>Note:</strong> For the security of your donation, we request that all contributions
+                be made to our
+                official foundation account. Please be cautious and avoid making donations to any personal accounts
+                claiming
+                to be affiliated with TOOBHEF. Your trust and support mean the world to us.</p>
+
+            <p>Thank you for being a part of positive change!</p>
+    </section>
+
+
+
+    <section class="donates">
+        <div class="title">
+            <p>Volunteer</p>
+            <h3 class="title-2">Join us, make a difference!</h3>
+        </div>
+        <div class="donate-flex">
+            <img src="{% static 'images/katt-yukawa-K0E6E0a0R3A-unsplash.jpg' %}" alt="">
+
+            <div>
+                <p>
+                    We appreciate your enthusiasm to contribute to the Theresa Onuego Mega Brain Health and Education
+                    Foundation TOOBHEF Your commitment can make a significant impact on the well-being of those we
+                    serve.
+                    Please take a moment to carefully explore the opportunities outlined on this page to find the
+                    perfect
+                    volunteer role for you. Together, let's create positive change and support our community.</p>
+
+                <h4>Why Volunteer with TOOBHEF?</h4>
+                <ul>
+                    <li><strong>Make a Real Difference:</strong> Your efforts directly contribute to improving
+                        healthcare
+                        and education in the
+                        community.</li>
+                    <li><strong>Join a Supportive Community:</strong> Become part of a dedicated team committed to
+                        positive
+                        change.</li>
+                    <li><strong>Gain Fulfillment:</strong> Experience the joy of giving back and making a meaningful
+                        impact
+                        on others.</li>
+                    <li><strong>Expand Your Skills:</strong> Develop new skills and knowledge through hands-on
+                        experiences
+                        and training
+                        opportunities.</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+        <h3 style="margin-top: 3rem;">Volunteer Application Form:</h3>
+        <div class="volunteer-flex">
+            <div class="vol-inst">
+                <h4>How to Get Involved:</h4>
+                <p>Ready to be a part of our volunteer community? Follow these simple steps:</p>
+                <ol>
+                    <li>Fill out the Volunteer Application Form.</li>
+                    <li>You will get an email from the toobhef team</li>
+                    <li>Attend an orientation session to learn more about our programs and initiatives.</li>
+                    <li>Get matched with a volunteer role that aligns with your interests and skills.</li>
+                    <li>Start making a positive impact!</li>
+                </ol>
+            </div>
+            <div class="contact-content " style="margin-bottom: 1rem;">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="input-sec">
+                        <div class="in-flex donte-txt">
+                            <input name="name" type="text" placeholder="Full Name" class="input2">
+                            <input name="phone" type="number" placeholder="Phone" class="input2">
+                        </div>
+                        <input name="email" type="email" class="input3 donte-txt" placeholder="Email">
+                        <textarea name="interest" type="text" class="input1 donate-txt-h " rows="5"
+                            placeholder="Volunteer Interests"></textarea>
+                        <textarea name="experience and reference" type="text" class="input1 donate-txt-h " rows="5"
+                            placeholder="Volunteer Experience and References(if any)"></textarea>
+
+                        <button class="donate-btn" name="volunteer_submit" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+        <p>Thank you for considering volunteering with TOOBHEF. Together, we can create positive change and build a
+            healthier, more educated community.</p>
+    </section>
+
+
+
+    <footer>
+        <div class="footer-title">
+            <div>
+                <a href="">
+                    <h3>TOOBHEF</h3>
+                </a>
+            </div>
+            <div class="socials">
+                <a href="https://web.facebook.com/profile.php?id=100086625846353"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+        </div>
+        <div class="content">
+            <div class="about-foot">
+                <h4>About Us</h4>
+                <p>We are dedicated to promoting healthier and more educated lives for all, breaking barriers, and
+                    fostering positive change within communities.</p>
+
+                <div class="">
+
+                </div>
+                <div class="">
+                    <h5 class="news">Sign Up For Our News Letter</h5>
+                </div>
+                <div class="email">
+                    <input type="Email" placeholder="Email Address">
+                    <button>Submit</button>
+                </div>
+            </div>
+            <div class="contact">
+                <h4>Contact</h4>
+                <div class="sub-cont">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="loc">
+                        <p>Address</p>
+                        <p><strong>15 Edinburgh Rd, Enugu </strong></p>
+                    </div>
+
+                </div>
+                <div class="sub-cont">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="loc">
+                        <p>Phone Number</p>
+                        <p><strong>+234 803 364 1955 </strong></p>
+                    </div>
+
+                </div>
+                <div class="sub-cont">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="loc">
+                        <p>Email</p>
+                        <p><strong>toobhef@gmail.com</strong></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="events">
+                <h4>Recent Events</h4>
+
+                <div class="event">
+                    <div class="img">
+                        <img src="{% static 'images2/events.webp' %}" alt="">
+                    </div>
+                    <div class="">
+                        <strong>Medical Outreach Eziagu</strong>
+                        <p><i class="fa-regular fa-calendar-days"></i> April 3, 2023</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="img">
+                        <img src="{% static 'images2/events.webp' %}" alt="">
+                    </div>
+                    <div class="">
+                        <strong>Medical Outreach Eziagu</strong>
+                        <p><i class="fa-regular fa-calendar-days"></i> April 3, 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <div class="top"><a href="#" id="backToTop"><i class="fa-solid fa-arrow-up"></i></a></div>
+    </footer>
+
+
+
+
+
+
+
+
+
+    <script src="{% static 'script.js' %}">
+
+    </script>
+</body>
+
+</html>

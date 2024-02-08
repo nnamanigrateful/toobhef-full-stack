@@ -1,0 +1,408 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOOBHEF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+</head>
+
+<body>
+
+    <section class="body">
+        {% include 'navbar.html' %}
+        <header>
+            <div class="hero-txt">
+                <h1>Empowering Lives Through Healthcare and Education</h1>
+                <p>We are dedicated to promoting healthier and more educated lives for all, breaking barriers, and
+                    fostering
+                    positive change within communities.</p>
+                <li> <a href="{% url 'donate' %}" class="action-btn">Get Involved</a> </li>
+            </div>
+        </header>
+
+
+    </section>
+
+    <section class="container pad">
+        <div class="title">
+            <p>What We Do</p>
+            <h3>We Are On A Mission To</h3>
+            <h3>Help The Helpless</h3>
+        </div>
+        <div class="mission">
+            <div class="box ">
+                <i class="fa-solid fa-notes-medical"></i>
+                <h4>Medical Outreach</h4>
+                <p>Bringing healthcare to your doorstep. TOOBEF's medical outreach ensures free screenings and treatment
+                    for all.</p>
+            </div>
+            <div class="box">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <h4>Charity</h4>
+                <p>Compassion in action. TOOBEF extends a helping hand with charity initiatives, providing essentials to
+                    those in need.</p>
+            </div>
+            <div class="box">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h4>Scholarship</h4>
+                <p>Empowering dreams through education. TOOBEF offers scholarships, unlocking opportunities for a
+                    brighter future.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about pad" id="about">
+        <div class="about-flex">
+            <div class="testing">
+                <div class="title-v2">
+                    <p>About Us</p>
+                    <h3 class="title-2">Discover Our Inspiring </h3>
+                    <h3 class="title-2">Mission Today</h3>
+                </div>
+
+                <div class="about-txt">
+                    <p>
+                        Welcome to Theresa Onuego Mega Brain Health and Education Foundation (TOOBHEF), a beacon of hope
+                        and
+                        transformation in Enugu, Nigeria. Our foundation, spearheaded by the distinguished neurosurgeon
+                        and
+                        educator, Dr. Ozor I. I., is committed to making a profound impact on the lives of the less
+                        privileged.
+                        <a href="{% url 'about founder' %}" style="padding: .15rem .7rem;border: 1px solid #05165f;background: none;color: #05165f !important;border-radius: 10px;border-width: thin; " class="more">More...</a>
+                    </p>
+
+
+                    <p class="strong"><strong>Our Mission</strong></p>
+                    <p>At TOOBHEF, our mission is clear: to empower and uplift the less privileged members of our
+                        society. We
+                        believe in the transformative power of accessible healthcare, quality education, and
+                        humanitarian
+                        support. Through these pillars, we aim to create a brighter future for those who need it most.
+                    </p>
+
+
+
+                    <div class="program">
+                        <p class="strong"><strong>Our Programs</strong></p>
+                        <div class="prog-flex">
+                            <div class="fonc">
+                                <div class="prog">
+                                    <p class="p-head"><span>Medical Awareness</span><i
+                                            class="fa-solid fa-chevron-down"></i></p>
+                                    <p class="p-txt">
+                                        We conduct targeted health education programs to create awareness about crucial
+                                        medical
+                                        issues within our community.</p>
+                                </div>
+                                <div class="prog">
+                                    <p class="p-head"><span>Medical Check-Up</span><i
+                                            class="fa-solid fa-chevron-down"></i></p>
+                                    <p class="p-txt">
+                                        We provide free medical consultation and treatments, ensuring that even the
+                                        most
+                                        vulnerable have access to healthcare services.</p>
+
+                                </div>
+                            </div>
+                            <div class="fonc">
+                                <div class="prog">
+                                    <p class="p-head"><span>Humanitarian Aid</span><i
+                                            class="fa-solid fa-chevron-down"></i></p>
+                                    <p class="p-txt">
+                                        Our foundation distributes essential items, including food, toiletries, and
+                                        other
+                                        hospitality items, to those in need, offering comfort and relief during
+                                        challenging
+                                        times.
+                                    </p>
+                                </div>
+                                <div class="prog">
+                                    <p class="p-head"><span>Scholarships</span><i class="fa-solid fa-chevron-down"></i>
+                                    </p>
+                                    <p class="p-txt">
+                                        TOOBHEF extends a helping hand to promising students by offering scholarships at
+                                        the
+                                        primary,
+                                        secondary, and tertiary levels, empowering them to pursue their dreams and
+                                        aspirations.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="image">
+                <img src="{% static 'images/xsscsccdcdc.png' %}" alt="">
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="event" class="pad">
+        <div class="title">
+            <p>Events</p>
+            <h3 class="title-2">Explore Our Latest Causes</h3>
+        </div>
+
+
+        <div class="card-list">
+
+            {% for event in events %}
+            <div class="card-item">
+                <img src="{{event.image.url}}" alt="Card Image">
+
+                <h3>{{event.title}}</h3>
+                <div class="event-details ">
+                    <p style="width: 100%;">{{event.detailed_description}}</p>
+                </div>
+                <div class="event-date">
+                    <p>Coming Up: <span>Jan 23, 2024</span></p>
+                </div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+
+    </section>
+
+
+
+    <section class="carousels pad">
+        <div class="title">
+            <p>Testimonial</p>
+            <h3>What People Say</h3>
+            <h3>About US</h3>
+        </div>
+        <div class="wrapper">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <ul class="carousel">
+
+                {% for testimonial in testimonials %}
+                <li class="card">
+                    <div class="p-txt2">
+                        <p>{{testimonial.text}}</p>
+                    </div>
+                    <div class="img-name ">
+                        <div class="img"><img src="{{ testimonial.image.url }}" alt="img" draggable="false">
+                        </div>
+                        <div>
+                            <span>{{testimonial.name}}</span>
+                            <p>{{testimonial.role}}</p>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+
+
+            </ul>
+            <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+
+    </section>
+
+    <section class="faq-wrappper pad">
+        <div class="title">
+            <p>FAQs</p>
+            <h3 class="title-2">Answers To Your Frequently</h3>
+            <h3 class="title-2">Asked Questions</h3>
+        </div>
+
+
+        {% for faq in faqs %}
+        <div class="faq">
+            <button class="accordian">
+                {{ faq.question }}
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="pannel">
+                <p>{{faq.answer}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+
+    <section class="pad vol">
+        <div class="volunteer ">
+            <h5>Lets Change the world with humanity</h5>
+            <a href="#">become a volunteer</a>
+        </div>
+    </section>
+
+    <section id="contact" class="pad">
+        <div class="title">
+            <p>Contact</p>
+            <h3>Send Us A Message</h3>
+            <h3></h3>
+        </div>
+
+        <div class="cont-wrap">
+
+            <div class="google-map"><iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.6930097715067!2d7.494085624348423!3d6.433465288050033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1044a163f2787cb1%3A0x20303018a91fc0c1!2snew%20layout%20University%20of%20Nigeria%2C%20Enugu%20campus%2C%2015%20Edinburgh%20Rd%2C%20Ogui%20400103%2C%20Enugu!5e0!3m2!1sen!2sng!4v1700609615939!5m2!1sen!2sng"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <h3>Get In Touch</h3>
+            </div>
+
+            <div class="contact-content">
+                <form method="POST">
+                    {% csrf_token %}
+                <div class="input-sec">
+                    <!-- <textarea name="message" type="text" class="input1" placeholder="Enter Message"></textarea> -->
+                    <div class="in-flex">
+                        <input name="name" type="text" placeholder="Enter Your Name" class="input2">
+                        <input name="email" type="email" placeholder="Email" class="input2">
+                    </div>
+                    <textarea name="message" type="text" class="input1" placeholder="Enter Message" style="margin-top: 2rem; padding: 10px;"></textarea>
+                    <button name="contact_submit" type="submit">Send</button>
+                
+                </div>
+                </form>
+                <div class="address-sec">
+                    <div class="add-txt">
+                        <p><i class="fa-solid fa-house"></i>Enugu, Nigeria</p>
+                        <span>15 Edinburgh Rd</span>
+                    </div>
+                    <div class="add-txt">
+                        <p><i class="fa-regular fa-phone"></i>+234 803 364 1955</p>
+                        <span>Mon to fri 9am to 6pm</span>
+                    </div>
+                    <div class="add-txt">
+                        <p><i class="fa-regular fa-envelope"></i></i>toobhef@gmail.com</p>
+                        <span>Send us a message</span>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        </div>
+    </section>
+
+
+    <!-- date  -->
+    <!-- <div id="currentDate"></div> -->
+
+
+
+
+
+
+    <footer>
+        <div class="footer-title">
+            <div>
+                <a href="">
+                    <h3>TOOBHEF</h3>
+                </a>
+            </div>
+            <div class="socials">
+                <a href="https://web.facebook.com/profile.php?id=100086625846353" target="_blank"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+        </div>
+        <div class="content">
+            <div class="about-foot">
+                <h4>About Us</h4>
+                <p>We are dedicated to promoting healthier and more educated lives for all, breaking barriers, and
+                    fostering positive change within communities.</p>
+
+                <div class="">
+
+                </div>
+                <div class="">
+                    <h5 class="news">Sign Up For Our News Letter</h5>
+                </div>
+                <form method="POST">
+                    {% csrf_token %}
+                <div class="email">
+                    <input name="email" type="Email" placeholder="Email Address">
+                    <button name="newsletter_submit" type="submit">Submit</button>
+                </div>
+            </form>
+            </div>
+            <div class="contact">
+                <h4>Contact</h4>
+                <div class="sub-cont">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="loc">
+                        <p>Address</p>
+                        <p><strong>15 Edinburgh Rd, Enugu </strong></p>
+                    </div>
+
+                </div>
+                <div class="sub-cont">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="loc">
+                        <p>Phone Number</p>
+                        <p><strong>+234 803 364 1955 </strong></p>
+                    </div>
+
+                </div>
+                <div class="sub-cont">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="loc">
+                        <p>Email</p>
+                        <p><strong>toobhef@gmail.com</strong></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="events">
+                <h4>Recent Events</h4>
+
+                <div class="event">
+                    <div class="img">
+                        <img src="{% static 'images2/events.webp' %}" alt="">
+                    </div>
+                    <div class="">
+                        <strong>Medical Outreach Ezeagu</strong>
+                        <p><i class="fa-regular fa-calendar-days"></i> April 3, 2023</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="img">
+                        <img src="{% static 'images2/events2.webp' %}" alt="">
+                    </div>
+                    <div class="">
+                        <strong>Medical Outreach Ezeagu</strong>
+                        <p><i class="fa-regular fa-calendar-days"></i> April 3, 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <div class="top"><a href="#" id="backToTop"><i class="fa-solid fa-arrow-up"></i></a></div>
+    </footer>
+
+
+
+
+    <script src="{% static 'script.js' %}">
+
+    </script>
+
+</body>
+
+</html>
