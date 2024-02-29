@@ -77,7 +77,9 @@
                         and
                         educator, Dr. Ozor I. I., is committed to making a profound impact on the lives of the less
                         privileged.
-                        <a href="{% url 'about founder' %}" style="padding: .15rem .7rem;border: 1px solid #05165f;background: none;color: #05165f !important;border-radius: 10px;border-width: thin; " class="more">More...</a>
+                        <a href="{% url 'about founder' %}"
+                            style="padding: .15rem .7rem;border: 1px solid #05165f;background: none;color: #05165f !important;border-radius: 10px;border-width: thin; "
+                            class="more">More...</a>
                     </p>
 
 
@@ -261,16 +263,25 @@
             <div class="contact-content">
                 <form method="POST">
                     {% csrf_token %}
-                <div class="input-sec">
-                    <!-- <textarea name="message" type="text" class="input1" placeholder="Enter Message"></textarea> -->
-                    <div class="in-flex">
-                        <input name="name" type="text" placeholder="Enter Your Name" class="input2">
-                        <input name="email" type="email" placeholder="Email" class="input2">
+                    <div class="input-sec">
+                        <div class="in-flex">
+                            <input name="name" type="text" placeholder="Enter Your Name" class="input2">
+                            <input name="email" type="email" placeholder="Email" class="input2">
+                        </div>
+                        <textarea name="message" type="text" class="input1" placeholder="Enter Message"
+                            style="margin-top: 2rem; padding: 10px;"></textarea>
+                        <button name="contact_submit" type="submit">Send</button>
+
                     </div>
-                    <textarea name="message" type="text" class="input1" placeholder="Enter Message" style="margin-top: 2rem; padding: 10px;"></textarea>
-                    <button name="contact_submit" type="submit">Send</button>
-                
-                </div>
+                    <div>
+                        {% for msg in messages %}
+                        <div class="success-flag-contact" id="alert" role="alert">
+                            {{ msg }}
+                        </div>
+                        {% endfor %}
+
+
+
                 </form>
                 <div class="address-sec">
                     <div class="add-txt">
@@ -294,14 +305,6 @@
 
         </div>
     </section>
-
-
-    <!-- date  -->
-    <!-- <div id="currentDate"></div> -->
-
-
-
-
 
 
     <footer>
@@ -333,11 +336,17 @@
                 </div>
                 <form method="POST">
                     {% csrf_token %}
-                <div class="email">
-                    <input name="email" type="Email" placeholder="Email Address">
-                    <button name="newsletter_submit" type="submit">Submit</button>
-                </div>
-            </form>
+                    <div class="email">
+                        <input name="email" type="Email" placeholder="Email Address">
+                        <button name="newsletter_submit" type="submit">Submit</button>
+                    </div>
+
+                    {% for msg_news in messages %}
+                        <div class="success-flag-contact-news" id="alert-news" role="alert">
+                            {{ msg_news }}
+                        </div>
+                        {% endfor %}
+                </form>
             </div>
             <div class="contact">
                 <h4>Contact</h4>
@@ -401,6 +410,34 @@
 
     <script src="{% static 'script.js' %}">
 
+    </script>
+
+    <script>
+        var alertDiv = document.getElementById('alert');
+
+        var checkInterval = setInterval(function () {
+            if (alertDiv.textContent.trim().length > 0) {
+                alertDiv.style.display = 'none';
+                clearInterval(checkInterval);
+            }
+        }, 4000);
+
+        var alertDiv_news = document.getElementById('alert-news');
+
+        var checkInterval = setInterval(function () {
+            if (alertDiv_news.textContent.trim().length > 0) {
+                alertDiv_news.remove();
+                clearInterval(checkInterval);
+            }
+        }, 4000);
+
+
+
+        setTimeOut(function () {
+            if ($('#alert').length > 0) {
+                $('#alert').remove();
+            }
+        }, 2000)
     </script>
 
 </body>

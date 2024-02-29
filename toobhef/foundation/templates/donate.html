@@ -94,45 +94,61 @@
         </div>
 
 
+        <div class="vol-flex">
+            <div class="vol-inst">
+                <h3>Volunteer Application Form:</h3>
+                <h4>How to Get Involved:</h4>
+                <p>Ready to be a part of our volunteer community? Follow these simple steps:</p>
+                <ol>
+                    <li>Fill out the Volunteer Application Form.</li>
+                    <li>You will get an email from the toobhef team</li>
+                    <li>Attend an orientation session to learn more about our programs and initiatives.</li>
+                    <li>Get matched with a volunteer role that aligns with your interests and skills.</li>
+                    <li>Start making a positive impact!</li>
+                </ol>
+            </div>
 
+            <div class="contact-content " style="margin-bottom: 1rem;">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="input-sec volunteer-form">
+                        <div class="in-flex donte-txt">
+                            <input name="name" type="text" placeholder="Full Name" class="input2">
+                            <input name="phone" type="number" placeholder="Phone" class="input2">
+                        </div>
+                        <input name="email" type="email" class="input3 donte-txt" placeholder="Email">
+                        <textarea name="interest" type="text" class="input1 donate-txt-h " rows="5"
+                            placeholder="Volunteer Interests"></textarea>
+                        <textarea name="experience and reference" type="text" class="input1 donate-txt-h " rows="5"
+                            placeholder="Volunteer Experience and References(if any)"></textarea>
 
-
-        <div class="vol-inst">
-            <h3>Volunteer Application Form:</h3>
-            <h4>How to Get Involved:</h4>
-            <p>Ready to be a part of our volunteer community? Follow these simple steps:</p>
-            <ol>
-                <li>Fill out the Volunteer Application Form.</li>
-                <li>You will get an email from the toobhef team</li>
-                <li>Attend an orientation session to learn more about our programs and initiatives.</li>
-                <li>Get matched with a volunteer role that aligns with your interests and skills.</li>
-                <li>Start making a positive impact!</li>
-            </ol>
-        </div>
-
-        <div class="contact-content " style="margin-bottom: 1rem;">
-            <form method="POST">
-                {% csrf_token %}
-                <div class="input-sec">
-                    <div class="in-flex donte-txt">
-                        <input name="name" type="text" placeholder="Full Name" class="input2">
-                        <input name="phone" type="number" placeholder="Phone" class="input2">
+                        <button class="donate-btn" name="volunteer_submit" type="submit">Submit</button>
                     </div>
-                    <input name="email" type="email" class="input3 donte-txt" placeholder="Email">
-                    <textarea name="interest" type="text" class="input1 donate-txt-h " rows="5"
-                        placeholder="Volunteer Interests"></textarea>
-                    <textarea name="experience and reference" type="text" class="input1 donate-txt-h " rows="5"
-                        placeholder="Volunteer Experience and References(if any)"></textarea>
 
-                    <button class="donate-btn" name="volunteer_submit" type="submit">Submit</button>
-                </div>
-            </form>
+                    {% for msg_volunteer in messages %}
+                    <div class="success-flag-contact-volunteer" id="alert-volunteer" role="alert" style="background: #d4edda;
+                    color: #155724;
+                    font-size: 1rem;
+                    padding: 1rem 2.5rem;
+                    margin: 20px; /* Adjust margin for spacing */
+                    border: 1px solid #c3e6cb;
+                    border-radius: 5px;
+                    position: fixed; /* Change position to fixed */
+                    top: 10px; /* Position from the top */
+                    right: 10px; /* Position from the right */
+                    z-index: 999; /* Set z-index to ensure it appears above other elements */">
+                        {{ msg_volunteer }}
+                    </div>
+                    {% endfor %}
+
+                    
+                </form>
+            </div>
         </div>
 
-        </div>
 
-
-         <p class="thanks">Thank you for considering volunteering with TOOBHEF. Together, we can create positive change and build a
+        <p class="thanks">Thank you for considering volunteering with TOOBHEF. Together, we can create positive change
+            and build a
             healthier, more educated community.</p>
     </section>
 
@@ -237,6 +253,17 @@
 
     <script src="{% static 'script.js' %}">
 
+    </script>
+
+    <script>
+        var alertDiv = document.getElementById('alert-volunteer');
+
+        var checkInterval = setInterval(function () {
+            if (alertDiv.textContent.trim().length > 0) {
+                alertDiv.style.display = 'none';
+                clearInterval(checkInterval);
+            }
+        }, 4000);
     </script>
 </body>
 

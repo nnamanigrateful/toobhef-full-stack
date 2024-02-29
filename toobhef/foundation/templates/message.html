@@ -1,0 +1,8 @@
+{% if messages %}
+{% for msg_news in messages %}
+<div class="success-flag-contact" id="alert-news" role="alert">
+    <!-- <span class="close-btn-contact">&times;</span> -->
+    {{ msg_news }}
+</div>
+{% endfor %}
+{% endif %}

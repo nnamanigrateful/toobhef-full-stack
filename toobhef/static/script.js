@@ -216,10 +216,22 @@ document.querySelectorAll('.card-item').forEach(card => {
     });
 });
 
-// Optional: if you add a close button, handle the click event to collapse the card
 document.querySelectorAll('.close-btn').forEach(btn => {
     btn.addEventListener('click', function (e) {
         e.stopPropagation(); // Prevent the card click event from firing
         this.closest('.card-item').classList.remove('expanded');
     });
 });
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     var closeBtnContact = document.getElementById('close-btn-contact');
+//     var successFlagContact = document.getElementById('success-flag-contact');
+
+//     if (successFlagContact && closeBtnContact) {
+//         closeBtnContact.addEventListener('click', function () {
+//             successFlagContact.style.display = 'none';
+//         });
+//     }
+// });
+
+
